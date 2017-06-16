@@ -93,14 +93,14 @@
     <Compile Include="Assets\Scripts\Gear\Weapon.cs" />
     <Compile Include="Assets\Scripts\Managers\Battle\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Battle\InputManager.cs" />
-    <Compile Include="Assets\Scripts\Managers\Battle\PlayerGrid.cs" />
-    <Compile Include="Assets\Scripts\Managers\Game\PlayerMaker.cs" />
     <Compile Include="Assets\Scripts\Managers\Player\PartyManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\Player\PlayerMaker.cs" />
     <Compile Include="Assets\Scripts\Skills\GearSkill.cs" />
     <Compile Include="Assets\Scripts\Skills\RaceSkill.cs" />
     <Compile Include="Assets\Scripts\Skills\Skill.cs" />
     <Compile Include="Assets\Scripts\UI\ScaleUI.cs" />
     <Compile Include="Assets\Scripts\UI\Unit.cs" />
+    <Compile Include="Assets\Scripts\UI\UpdateBattleUI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

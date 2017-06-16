@@ -10,8 +10,8 @@ public class Unit : MonoBehaviour {
 
     bool isActive;
     public int UnitNumber;
-    public GameObject current;
-    public Image displaySprite;
+    GameObject current;
+    Image displaySprite;
     EventTrigger eventHandler;
 
 	void Awake ()
