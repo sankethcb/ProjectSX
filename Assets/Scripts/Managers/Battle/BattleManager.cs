@@ -87,5 +87,10 @@ public class BattleManager : MonoBehaviour
         EnemyUnits[0].SetChar(EnemyParty[0]);
         EnemyUnits[1].SetChar(EnemyParty[1]);
     }
+
+    void TurnOrder()
+    {
+
+    }
 	
 }

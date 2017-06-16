@@ -13,7 +13,17 @@ public abstract class Character : MonoBehaviour
     #region Character Members
     public string Name { get; protected set; }
     public int Level { get; protected set; }
-    private double bHP;
+
+    public int Agility
+    {
+        get { return Agility; }
+        set
+        {
+            if (value >=0)
+                Size = value;
+        }
+    }
+
     public int Size
     {
         get { return Size; }
@@ -23,6 +33,8 @@ public abstract class Character : MonoBehaviour
                 Size = value;
         }
     }
+
+    private double bHP;
     public double BaseHP
     {
         get { return bHP;}

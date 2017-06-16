@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 
-public class Unit : MonoBehaviour {
+public class Unit : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
+{
 
 
     bool isActive;
@@ -20,12 +21,22 @@ public class Unit : MonoBehaviour {
 
 	}
 	
-	
+	public void OnPointerDown(PointerEventData touch)
+    {
+        if(isActive)
+        {
+            displaySprite.color = Color.gray;
+        }
+    }
+
+    public void OnPointerUp(PointerEventData touch)
+    {
+        displaySprite.color = Color.white;
+    }
 
     public void SetChar(GameObject character)
     {
         current = character;
-        isActive = true;
          SetSprite();
     }
 
@@ -46,6 +57,6 @@ public class Unit : MonoBehaviour {
 
     void RemoveSprite()
     {
-        displaySprite.sprite = null;
+       
     }
 }

@@ -15,6 +15,7 @@ public class BaseEnemy : Character {
         eType = GetComponent<IEnemyInterface>();
         eType.BaseStats(this);
         baseDmg = 10;
+        Agility = 1;
 	}
 
     public void Attack()
