@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyParty : MonoBehaviour {
 
     public GameObject[] Party;
+    public int count { get; private set;}
+    public GameObject bandit;
 
-    public GameObject b1;
-    public GameObject b2;
     // Use this for initialization
     void Awake ()
     {
@@ -20,7 +20,8 @@ public class EnemyParty : MonoBehaviour {
 
     void SetParty()
     {
-        Party[0] = Instantiate(b1); 
-        Party[1] = Instantiate(b2);
+        Party[0] = Instantiate(bandit); 
+        Party[1] = Instantiate(bandit);
+        count = 2;
     }
 }

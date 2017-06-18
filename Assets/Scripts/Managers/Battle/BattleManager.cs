@@ -10,14 +10,19 @@ public class BattleManager : MonoBehaviour
     GameObject PlayerManager;
     GameObject EnemyManager;
 
-    GameObject[] PlayerParty;
+    public GameObject[] PlayerParty;
     public GameObject[] EnemyParty;
 
     GameObject[] PlayerGrid;
     GameObject[] EnemyGrid;
 
+   public List<GameObject> TurnOrder;
+
     Unit[] PlayerUnits;
     Unit[] EnemyUnits;
+
+    public int characterCount;
+
     void Start ()
     {
         PlayerManager = GameObject.FindGameObjectWithTag("PlayerManager");
@@ -32,7 +37,10 @@ public class BattleManager : MonoBehaviour
         PlayerUnits = new Unit[6];
         EnemyUnits = new Unit[6];
 
-        SetUnits();
+        TurnOrder = new List<GameObject>();
+
+        characterCount = PlayerManager.GetComponent<PartyManager>().count+ EnemyManager.GetComponent<EnemyParty>().count;
+       
         Battle();
 
     }
@@ -57,8 +65,10 @@ public class BattleManager : MonoBehaviour
 
     void BattleSetUp()
     {
+        SetUnits();
         SetUpPlayer();
-        SetupEnemy();
+        SetUpEnemy();
+        SetTurnOrder();
     }
 
     void SetUnits()
@@ -82,14 +92,31 @@ public class BattleManager : MonoBehaviour
         PlayerUnits[1].SetChar(PlayerParty[1]);
     }
 
-    void SetupEnemy()
+    void SetUpEnemy()
     {
         EnemyUnits[0].SetChar(EnemyParty[0]);
         EnemyUnits[1].SetChar(EnemyParty[1]);
     }
 
-    void TurnOrder()
+    void SetTurnOrder()
     {
+        int hAgility=0;
+        GameObject temp;
+        
+
+        for(int i=0; i <characterCount;i++)
+        {
+            hAgility = PlayerParty[0].GetComponent<Player>().Agility;
+           
+            if (PlayerParty[i] != null)
+                TurnOrder.Add(PlayerParty[i]);
+
+            if (EnemyParty[i] != null)
+                TurnOrder.Add(EnemyParty[i]);
+
+        }
+
+       
 
     }
 	

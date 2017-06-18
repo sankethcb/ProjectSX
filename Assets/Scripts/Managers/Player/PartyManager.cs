@@ -10,6 +10,9 @@ public class PartyManager : MonoBehaviour {
     public GameObject bm;
     public GameObject xw;
 
+
+    public int count { get; private set; }
+
     void Awake ()
     {
         Squad = new List<GameObject>();
@@ -31,6 +34,7 @@ public class PartyManager : MonoBehaviour {
     {
         PlayerParty[0] = Squad[0];
         PlayerParty[1] = Squad[1];
+        count = 2;
     }
 	
 }

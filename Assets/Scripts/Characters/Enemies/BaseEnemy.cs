@@ -7,7 +7,6 @@ public class BaseEnemy : Character {
 
     IEnemyInterface eType;
     float baseDmg;
-    double cHP;
 
     void Start ()
     {

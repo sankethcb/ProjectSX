@@ -11,16 +11,20 @@ public class Player : Character
     IRaceInterface PlayerRace;
     public int Threat { get; set; }
     float baseDmg;
-    double cHP;
+
+
     void Start ()
     {
         Level = 1;
         IsPlayer = true;
         PlayerRace = GetComponent<IRaceInterface>();
-        PlayerRace.BaseStats(this);
         baseDmg = 10;
         Agility = 2;
-	}
+        PlayerRace.BaseStats(this);
+       
+        
+
+    }
 
     public void Attack()
     {

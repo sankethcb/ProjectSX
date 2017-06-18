@@ -38,6 +38,7 @@ public class Unit : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     {
         current = character;
          SetSprite();
+        isActive = true;
     }
 
     public void RemoveChar()

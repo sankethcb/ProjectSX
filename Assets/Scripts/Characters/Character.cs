@@ -14,23 +14,25 @@ public abstract class Character : MonoBehaviour
     public string Name { get; protected set; }
     public int Level { get; protected set; }
 
+    private int agility;
     public int Agility
     {
-        get { return Agility; }
+        get { return agility; }
         set
         {
             if (value >=0)
-                Size = value;
+                agility = value;
         }
     }
 
+    private int size;
     public int Size
     {
-        get { return Size; }
+        get { return size; }
         set
         {
             if (value > 0)
-                Size = value;
+                size = value;
         }
     }
 
@@ -47,24 +49,27 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    public double CHP
+    private float cHP;
+    public float CHP
     {
         get
         {
-            return CHP;
+            return cHP;
         }
         set
         {
             if (value > 0)
-                CHP = value;
+                cHP = value;
             else
             {
-                CHP = 0;
+                cHP = 0;
                 isDead = true;
             }
         }
     }
+
     public bool isDead { get; private set; }
+
     public bool IsPlayer { get; protected set; }
     public Sprite MySprite;
     

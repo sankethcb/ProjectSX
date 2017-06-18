@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Characters\Squad\Player.cs" />
     <Compile Include="Assets\Scripts\Gear\Gear.cs" />
     <Compile Include="Assets\Scripts\Gear\Weapon.cs" />
+    <Compile Include="Assets\Scripts\ICharacterInterface.cs" />
     <Compile Include="Assets\Scripts\Managers\Battle\BattleManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Battle\InputManager.cs" />
     <Compile Include="Assets\Scripts\Managers\Player\PartyManager.cs" />
