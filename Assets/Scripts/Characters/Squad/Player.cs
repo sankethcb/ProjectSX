@@ -13,10 +13,9 @@ public class Player : Character
     float baseDmg;
 
 
-    void Start ()
+    void Awake ()
     {
         Level = 1;
-        IsPlayer = true;
         PlayerRace = GetComponent<IRaceInterface>();
         baseDmg = 10;
         Agility = 2;

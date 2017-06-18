@@ -8,9 +8,8 @@ public class BaseEnemy : Character {
     IEnemyInterface eType;
     float baseDmg;
 
-    void Start ()
+    void Awake()
     {
-        IsPlayer = false;
         eType = GetComponent<IEnemyInterface>();
         eType.BaseStats(this);
         baseDmg = 10;

@@ -7,7 +7,7 @@ public class Blood_Monk : Race, IRaceInterface
 {
 
 	
-	void Start ()
+	void Awake()
     {
         Type = "Blood Monk";
         Size = 1;

@@ -9,7 +9,7 @@ public abstract class Race : MonoBehaviour {
     public int Size { get; protected set; }
     public int Threat { get; protected set; }
 
-    void Start ()
+    void Awake()
     {
         Type = "none";
         Size = 1;

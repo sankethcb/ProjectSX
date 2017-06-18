@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bandit : EnemyType,IEnemyInterface
 {
    
-    void Start ()
+    void Awake()
     {
         BaseHP = 100;
         Size = 1;

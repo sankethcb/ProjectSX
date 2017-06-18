@@ -10,8 +10,8 @@ public class BattleManager : MonoBehaviour
     GameObject PlayerManager;
     GameObject EnemyManager;
 
-    public GameObject[] PlayerParty;
-    public GameObject[] EnemyParty;
+    GameObject[] PlayerParty;
+   GameObject[] EnemyParty;
 
     GameObject[] PlayerGrid;
     GameObject[] EnemyGrid;
@@ -21,7 +21,7 @@ public class BattleManager : MonoBehaviour
     Unit[] PlayerUnits;
     Unit[] EnemyUnits;
 
-    public int characterCount;
+    int characterCount;
 
     void Start ()
     {
@@ -101,21 +101,59 @@ public class BattleManager : MonoBehaviour
     void SetTurnOrder()
     {
         int hAgility=0;
+        int hChar = 0;
         GameObject temp;
-        
+     
 
-        for(int i=0; i <characterCount;i++)
+        for(int j=0;j<6;j++)
         {
-            hAgility = PlayerParty[0].GetComponent<Player>().Agility;
-           
-            if (PlayerParty[i] != null)
-                TurnOrder.Add(PlayerParty[i]);
-
-            if (EnemyParty[i] != null)
-                TurnOrder.Add(EnemyParty[i]);
+            if(PlayerParty[j] != null)
+                TurnOrder.Add(PlayerParty[j]);
+            if(EnemyParty[j] != null)
+                TurnOrder.Add(EnemyParty[j]);
 
         }
+        
+        
+        for (int i=0; i <characterCount;i++)
+        {
+            hAgility = 0;
+            hChar = 0;
+            for (int k=i;k<characterCount;k++)
+            {
 
+                if(TurnOrder[k].GetComponent<Player>()!=null)
+                {
+                    if(TurnOrder[k].GetComponent<Player>().Agility>hAgility)
+                    {
+                        hChar = k;
+                        hAgility = TurnOrder[k].GetComponent<Player>().Agility;
+
+                        
+
+                    }
+                   
+
+                }
+                else if (TurnOrder[k].GetComponent<BaseEnemy>() != null)
+                {
+                    if (TurnOrder[k].GetComponent<BaseEnemy>().Agility > hAgility)
+                    {
+                        hChar = k;
+                        hAgility = TurnOrder[k].GetComponent<BaseEnemy>().Agility;
+                        
+                    }
+                   
+                }
+               
+            }
+
+            temp = TurnOrder[i];
+            TurnOrder[i] = TurnOrder[hChar];
+            TurnOrder[hChar] = temp;
+
+        }
+     
        
 
     }

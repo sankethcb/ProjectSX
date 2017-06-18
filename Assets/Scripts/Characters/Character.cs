@@ -70,13 +70,13 @@ public abstract class Character : MonoBehaviour
 
     public bool isDead { get; private set; }
 
-    public bool IsPlayer { get; protected set; }
+
     public Sprite MySprite;
     
     #endregion
 
     #region Character Methods
-    private void Start()
+    private void Awake()
     {
         Name = "default";
         Level = 1;

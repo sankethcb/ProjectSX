@@ -7,7 +7,7 @@ public class Xaja :Race,IRaceInterface
 {
    
 
-    void Start()
+    void Awake()
     {
         Type = "Xaja Warrior";
         Size = 1;
